@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import {Box, Tab, Tabs, Typography} from '@mui/material';
+import {useState} from 'react';
+import ChannelTable from "./ChannelTable";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [tabIndex, setTabIndex] = useState(0);
+
+    const handleTabChange = (event, newTabIndex) => {
+        setTabIndex(newTabIndex);
+    };
+
+    return (
+        <Box>
+            <Box>
+                <ChannelTable/>
+            </Box>
+        </Box>
+    );
 }
 
 export default App;
